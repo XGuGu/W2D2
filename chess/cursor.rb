@@ -32,7 +32,7 @@ MOVES = {
 
 class Cursor
 
-  attr_reader :cursor_pos, :board
+  attr_reader :cursor_pos, :board, :selected
 
   def initialize(cursor_pos, board)
     @cursor_pos = cursor_pos
@@ -106,7 +106,7 @@ class Cursor
   end
 
   def update_pos(diff)
-    @cursor_pos = diff if @board.valid_play?(diff)
+    # @cursor_pos = diff if @board.valid_play?(diff)
 
     left = [MOVES[diff][0] + @cursor_pos[0]]
     right = [MOVES[diff][1] + @cursor_pos[1]]
